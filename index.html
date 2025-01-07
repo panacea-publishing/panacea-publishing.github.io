@@ -91,6 +91,50 @@
             padding-bottom: 30px;
         }
 
+        label {
+        	text-align: center;
+        	display: block;
+
+        }
+
+        input {
+        	border: 0;
+        	padding: 0;
+        }
+
+        input[type=email] {
+        	background: black;
+        	color: white;
+        	font-family: Helvetica, Arial, sans-serif;
+        	border: 2px solid white;
+        	padding: 12px;
+        	display: block;
+        	margin: 20px auto;
+        	font-size: 15px;
+        	text-align: center;
+        	font-style: normal;
+        }
+
+        input[type=email]::placeholder{
+        	font-style: italic;
+        	color: white;
+        }
+
+        *:focus {
+        	outline: 3px solid pink;
+        	box-shadow: 2px 2px 10px pink;
+        }
+
+        input[type=submit]{
+        	background: black;
+        	font-size: 15px;
+        	font-family: Helvetica, Arial, sans-serif;
+        	text-align: center;
+        	display: block;
+        	margin: auto;
+        	cursor: pointer;
+        }
+
 		@media only screen and (max-width: 760px) {
 
 			body {
@@ -129,6 +173,16 @@
 	<div class="hero"></div>
 	<div class="description">
 		<p>PANACEA PUBLISHING is an independent and interdependent press that both supports and publishes the work of exceptional talent in the pursuit of both private and public apocalypse.</p>
+		 <form
+  			action="https://buttondown.com/api/emails/embed-subscribe/panacea"
+  			method="post"
+  			target="popupwindow"
+  			onsubmit="window.open('https://buttondown.com/panacea', 'popupwindow')">
+  <label for="bd-email">subscribe to our newsletter for updates</label>
+  <input type="email" name="email" id="bd-email" placeholder="email address" />
+  
+  <input type="submit" value="SUBSCRIBE" class="button" />
+</form>
 	</div>	
 	<div class="calendar-section">
 	<img src="june.jpg">
