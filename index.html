@@ -1,7 +1,7 @@
 <html>
 <head>
 	<title>PANACEA PUBLISHING</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<style>
 
 		* {
@@ -57,7 +57,7 @@
 		a {
 			padding-bottom: 3px;
 			border-bottom: 2px solid white;
-		} a:hover {
+		} a:hover, a:active {
 			border-bottom: 2px solid black;
 		}
 
@@ -78,7 +78,7 @@
             border: 2px solid white;
             text-align: center;
         }
-        .button:hover {
+        .button:hover, button:active {
             background: white;
             color: black;
             border-bottom: 2px solid white;
@@ -135,6 +135,19 @@
         	cursor: pointer;
         }
 
+        @media (hover: hover) {
+		    /* Only apply hover effects on devices that support hover */
+		    .button:hover {
+		        background: white;
+		        color: black;
+		        border-bottom: 2px solid white;
+		    }
+		    
+		    a:hover {
+		        border-bottom: 2px solid black;
+		    }
+		}
+
 		@media only screen and (max-width: 760px) {
 
 			body {
@@ -148,6 +161,12 @@
 				top: 0;
 				left: 0;
 				mix-blend-mode: difference;
+				pointer-events: none; /* Let touches pass through */
+    			height: auto; /* Only take up needed space */	
+			}
+
+			.logo {
+				pointer-events: auto;
 			}
 
 			.hero {
@@ -159,6 +178,18 @@
 			.calendar-section {
 				width: 100%;
 			}
+
+			input[type=email] {
+		        padding: 15px 12px; /* Slightly larger padding for touch */
+		        width: 100%;
+		        max-width: 300px; /* Prevent it from getting too wide */
+		    }
+		    
+		    .button {
+		        padding: 15px 24px; /* Larger touch target */
+		        min-width: 44px; /* Minimum touch target size */
+		        min-height: 44px;
+		    }
 
 		}
 
